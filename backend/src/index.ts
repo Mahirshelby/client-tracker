@@ -4,6 +4,7 @@ import cors from "cors";
 import { prisma } from "./db";
 import authRoutes from "./routes/auth";
 import clientRoutes from "./routes/clients";
+import taskRoutes from "./routes/tasks";
 
 const app = express();
 app.use(cors());
@@ -20,6 +21,7 @@ app.get("/health", async (_req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/clients", clientRoutes);
+app.use("/", taskRoutes);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

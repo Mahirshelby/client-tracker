@@ -88,13 +88,13 @@ export default function ClientsPage() {
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="flex-1 border rounded px-3 py-2 text-gray-900"
+          className="flex-1 border rounded px-3 py-2 bg-white text-gray-900 placeholder-gray-400"
         />
         <input
           placeholder="Company"
           value={company}
           onChange={(e) => setCompany(e.target.value)}
-          className="flex-1 border rounded px-3 py-2 text-gray-900"
+          className="flex-1 border rounded px-3 py-2 bg-white text-gray-900 placeholder-gray-400"
         />
         <button className="bg-blue-600 text-white rounded px-4">Add</button>
       </form>
@@ -106,7 +106,7 @@ export default function ClientsPage() {
           setSearch(e.target.value);
           setPage(1);
         }}
-        className="w-full border rounded px-3 py-2 text-gray-900"
+        className="w-full border rounded px-3 py-2 bg-white text-gray-900 placeholder-gray-400"
       />
 
       {error && <p className="text-sm text-red-600">{error}</p>}

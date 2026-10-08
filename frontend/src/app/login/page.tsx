@@ -32,7 +32,7 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <form onSubmit={submit} className="w-full max-w-sm bg-white p-6 rounded-lg shadow space-y-4">
-        <h1 className="text-2xl font-semibold text-gray-900">
+        <h1 className="text-2xl font-semibold bg-white text-gray-900 placeholder-gray-400">
           {mode === "login" ? "Log in" : "Create account"}
         </h1>
         <input
@@ -41,7 +41,7 @@ export default function LoginPage() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border rounded px-3 py-2 text-gray-900"
+          className="w-full border rounded px-3 py-2 bg-white text-gray-900 placeholder-gray-400"
         />
         <input
           type="password"
@@ -50,7 +50,7 @@ export default function LoginPage() {
           placeholder="Password (min 8 characters)"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border rounded px-3 py-2 text-gray-900"
+          className="w-full border rounded px-3 py-2 bg-white text-gray-900 placeholder-gray-400"
         />
         {error && <p className="text-sm text-red-600">{error}</p>}
         <button

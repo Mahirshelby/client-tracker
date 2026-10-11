@@ -233,7 +233,7 @@ export default function ClientsPage() {
                     {c.name}
                   </Link>
                   <p className="truncate text-sm text-slate-500">
-                    {[c.company, c.email].filter(Boolean).join(" · ") || "No details yet"}
+                    {[c.company, c.email].filter(Boolean).join(" - ") || "No details yet"}
                   </p>
                   {c.tags.length > 0 && (
                     <div className="mt-1.5 flex flex-wrap gap-1.5">

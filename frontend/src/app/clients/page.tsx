@@ -108,7 +108,7 @@ export default function ClientsPage() {
   const noClientsAtAll = data && data.total === 0 && !query;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
       <Navbar />
       <main className="mx-auto max-w-4xl space-y-6 px-4 py-8">
         <div className="flex items-end justify-between">

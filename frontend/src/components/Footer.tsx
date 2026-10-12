@@ -21,7 +21,7 @@ function ArrowUpIcon() {
 
 function HeartIcon() {
   return (
-    <svg viewBox="0 0 20 20" className="inline h-4 w-4 animate-pulse fill-rose-500" aria-hidden="true">
+    <svg viewBox="0 0 20 20" className="inline h-4 w-4 animate-pulse fill-blue-500" aria-hidden="true">
       <path d="M10 17.5l-1.45-1.32C4.4 12.36 2 10.18 2 7.5 2 5.32 3.7 3.6 5.9 3.6c1.24 0 2.43.58 3.1 1.5.67-.92 1.86-1.5 3.1-1.5 2.2 0 3.9 1.72 3.9 3.9 0 2.68-2.4 4.86-6.55 8.68L10 17.5z" />
     </svg>
   );

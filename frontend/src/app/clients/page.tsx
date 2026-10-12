@@ -84,22 +84,36 @@ export default function ClientsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
       <Navbar />
-      <main className="mx-auto w-full max-w-4xl flex-1 space-y-6 px-4 py-8">
-        <div className="flex items-end justify-between">
+
+      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-slate-900">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-fuchsia-500/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-indigo-400/20 blur-3xl" />
+        <div className="relative mx-auto flex max-w-4xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-2xl font-semibold text-slate-900">Clients</h1>
-            <p className="text-sm text-slate-500">
-              {data ? `${data.total} ${data.total === 1 ? "client" : "clients"}` : "Loading..."}
+            <p className="text-sm font-medium text-indigo-200">Your workspace</p>
+            <h1 className="mt-1 text-3xl font-semibold text-white">Clients</h1>
+            <p className="mt-2 max-w-md text-sm text-indigo-100">
+              Keep every contact, note and follow-up in one place.
             </p>
           </div>
-          <button
-            onClick={() => setShowForm(!showForm)}
-            className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-700"
-          >
-            {showForm ? "Close" : "+ Add client"}
-          </button>
+          <div className="flex items-center gap-4">
+            <div className="rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-center backdrop-blur">
+              <p className="text-2xl font-semibold text-white">{data ? data.total : "-"}</p>
+              <p className="text-xs text-indigo-100">
+                {data && data.total === 1 ? "client" : "clients"}
+              </p>
+            </div>
+            <button
+              onClick={() => setShowForm(!showForm)}
+              className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-indigo-700 shadow-lg transition hover:bg-indigo-50"
+            >
+              {showForm ? "Close" : "+ Add client"}
+            </button>
+          </div>
         </div>
+      </section>
 
+      <main className="mx-auto w-full max-w-4xl flex-1 space-y-6 px-4 py-8">
         {showForm && <ClientForm onSubmit={addClient} onCancel={() => setShowForm(false)} />}
 
         <input
@@ -138,6 +152,7 @@ export default function ClientsPage() {
 
         {data && <Pagination page={data.page} totalPages={data.totalPages} onChange={setPage} />}
       </main>
+
       <Footer />
     </div>
   );

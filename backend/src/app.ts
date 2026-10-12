@@ -5,6 +5,7 @@ import { prisma } from "./db";
 import authRoutes from "./routes/auth";
 import clientRoutes from "./routes/clients";
 import taskRoutes from "./routes/tasks";
+import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
 app.use(cors());
@@ -22,5 +23,7 @@ app.get("/health", async (_req, res) => {
 app.use("/auth", authRoutes);
 app.use("/clients", clientRoutes);
 app.use("/", taskRoutes);
+
+app.use(errorHandler);
 
 export default app;

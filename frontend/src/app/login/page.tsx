@@ -89,7 +89,7 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full rounded-lg bg-indigo-600 py-2.5 font-medium text-white transition hover:bg-indigo-700 disabled:opacity-60"
           >
-            {loading ? "Please wait..." : mode === "login" ? "Log in" : "Create account"}
+            {loading ? "Please wait, server may be waking up..." : mode === "login" ? "Log in" : "Create account"}
           </button>
 
           <p className="text-center text-sm text-slate-500">
